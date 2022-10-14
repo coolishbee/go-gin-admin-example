@@ -42,6 +42,7 @@ func startServer() {
 	r.Static("/uploads", "./uploads")
 
 	eng.HTML("GET", "/admin", pages.GetDashBoard)
+	eng.HTML("GET", "/admin/table", pages.GetTableContent)
 	eng.HTMLFile("GET", "/admin/hello", "./html/hello.tmpl", map[string]interface{}{
 		"msg": "Hello world",
 	})

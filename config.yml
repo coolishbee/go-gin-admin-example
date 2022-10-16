@@ -16,7 +16,7 @@ database:
     host: 127.0.0.1
     port: 3307
     user: root
-    pwd: root
+    pwd: rootroot
     name: goadmin    
     max_idle_con: 5
     max_open_con: 10
@@ -62,11 +62,11 @@ debug: true
 env: local
 
 # Local storage path of info log.
-info_log: /Users/gamepub/Documents/go/src/github.com/coolishbee/go-gin-admin-example/logs/info.log
+info_log: ./logs/info.log
 # Local storage path of error log.
-error_log: /Users/gamepub/Documents/go/src/github.com/coolishbee/go-gin-admin-example/logs/error.log
+error_log: ./logs/error.log
 # Local storage path of access log.
-access_log: /Users/gamepub/Documents/go/src/github.com/coolishbee/go-gin-admin-example/logs/access.log
+access_log: ./logs/access.log
 
 # Whether to close the assets access log.
 # access_assets_log_off: false
@@ -142,9 +142,9 @@ file_upload_engine:
 # - ""
 
 # The local path of the boot file
-bootstrap_file_path: /Users/gamepub/Documents/go/src/github.com/coolishbee/go-gin-admin-example/bootstrap.go
+bootstrap_file_path: ./bootstrap.go
 # The local path of the go.mod file
-go_mod_file_path: /Users/gamepub/Documents/go/src/github.com/coolishbee/go-gin-admin-example/go.mod
+go_mod_file_path: ./go.mod
 
 # Whether to allow deletion of operation log.
 allow_del_operation_log: false

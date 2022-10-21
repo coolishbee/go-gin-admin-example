@@ -35,6 +35,7 @@ func startServer() {
 
 	if err := eng.AddConfigFromYAML("./config.yml").
 		AddGenerators(tables.Generators).
+		AddGenerator("external", tables.GetExternalTable).
 		Use(r); err != nil {
 		panic(err)
 	}

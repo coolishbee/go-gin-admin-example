@@ -14,7 +14,20 @@ import (
 func GetAuthorsTable(ctx *context.Context) (authorsTable table.Table) {
 
 	// connect your custom connection
-	authorsTable = table.NewDefaultTable(table.DefaultConfigWithDriverAndConnection("mysql", "admin"))
+	//authorsTable = table.NewDefaultTable(table.DefaultConfigWithDriverAndConnection("mysql", "default"))
+
+	authorsTable = table.NewDefaultTable(table.Config{
+		Driver:     db.DriverMysql,
+		CanAdd:     true,
+		Editable:   true,
+		Deletable:  true,
+		Exportable: true,
+		Connection: table.DefaultConnectionName,
+		PrimaryKey: table.PrimaryKey{
+			Type: db.Int,
+			Name: table.DefaultPrimaryKeyName,
+		},
+	})
 
 	info := authorsTable.GetInfo()
 	info.AddField("ID", "id", db.Int).FieldSortable()

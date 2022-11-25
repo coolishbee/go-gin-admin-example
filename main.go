@@ -15,11 +15,14 @@ import (
 	"github.com/GoAdminGroup/go-admin/template/chartjs"
 	"github.com/gin-gonic/gin"
 
+	"go-gin-admin-example/models"
 	"go-gin-admin-example/pages"
+	"go-gin-admin-example/setting"
 	"go-gin-admin-example/tables"
 )
 
 func main() {
+	setting.Setup()
 	startServer()
 }
 
@@ -40,9 +43,12 @@ func startServer() {
 		panic(err)
 	}
 
+	models.Init(eng.MysqlConnection())
+
 	r.Static("/uploads", "./uploads")
 
 	eng.HTML("GET", "/admin", pages.GetDashBoard)
+	eng.HTML("GET", "/admin/form", pages.GetFormContent)
 	eng.HTML("GET", "/admin/table", pages.GetTableContent)
 	eng.HTMLFile("GET", "/admin/hello", "./html/hello.tmpl", map[string]interface{}{
 		"msg": "Hello world",

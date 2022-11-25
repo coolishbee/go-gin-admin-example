@@ -16,8 +16,8 @@ database:
     host: 127.0.0.1
     port: 3307
     user: root
-    pwd: rootroot
-    name: goadmin    
+    pwd: root
+    name: goadmin
     max_idle_con: 5
     max_open_con: 10
     # params are additional parameters required by the driver.

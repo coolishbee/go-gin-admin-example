@@ -1,40 +1,43 @@
 
-# GoAdmin Instruction
+# go-gin-admin-example
 
-GoAdmin is a golang framework help gopher quickly build a data visualization platform. 
+[![rcard](https://goreportcard.com/badge/github.com/coolishbee/go-gin-admin-example)](https://goreportcard.com/report/github.com/coolishbee/go-gin-admin-example)
 
-- [github](https://github.com/GoAdminGroup/go-admin)
-- [forum](http://discuss.go-admin.com)
-- [document](https://book.go-admin.cn)
+[GoAdmin](https://github.com/GoAdminGroup/go-admin) Example
 
-## Directories Introduction
-
+## Installation
 ```
-.
-├── Makefile            Makefile
-├── adm.ini             adm config
-├── build               binary build target folder
-├── config.yml          config file
-├── go.mod              go.mod
-├── go.sum              go.sum
-├── html                frontend html files
-├── logs                logs
-├── main.go             program entrance file
-├── main_test.go        test file
-├── pages               page controllers
-├── tables              table models
-└── uploads             upload directory
+$ git clone https://github.com/coolishbee/go-gin-admin-example.git
 ```
 
-## Generate Table Model
+## How to run
 
-### online tool
+### Required
 
-visit: http://127.0.0.1:80/admin/info/generate/new
+- MariaDB
 
-### use adm
+### Ready
+
+Create a **goadmin database** and import [SQL](https://github.com/coolishbee/go-gin-admin-example/blob/main/sql/goadmin_2022-11-28.sql)
+
+### Conf
+
+You should modify `adm.ini`
 
 ```
-adm generate
+[database]
+Driver = mysql
+Host = 127.0.0.1
+Username = root 
+Port = 
+Password = 
+Database = goadmin
+...
+```
+
+### Run
+```
+$ cd $GOPATH/src/go-gin-admin-example
+$ go run main.go
 ```
 

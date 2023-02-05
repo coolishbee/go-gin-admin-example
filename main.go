@@ -53,8 +53,9 @@ func startServer() {
 	eng.HTMLFile("GET", "/admin/hello", "./html/hello.tmpl", map[string]interface{}{
 		"msg": "Hello world",
 	})
+	//template.ExecuteOptions{HideSideBar: true}
 
-	_ = r.Run(":80")
+	_ = r.Run(":9033")
 
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt)

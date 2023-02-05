@@ -74,5 +74,6 @@ func GetTableContent(ctx *context.Context) (types.Panel, error) {
 		Title:       "Table",
 		Description: "table example",
 		Callbacks:   cbs,
+		MiniSidebar: true,
 	}, nil
 }
